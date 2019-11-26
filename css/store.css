@@ -1,0 +1,129 @@
+body::after {
+	margin-top: 30px;
+}
+
+@media (max-width:1200px) {
+    header > a > .logo-1 {
+        width: 100px;
+        height: 100px;
+    }
+	
+	.con {
+		margin-left: 25px;
+		margin-right: 25px;
+	}
+}
+
+.con {
+    max-width: 1150px;
+}
+
+section.middle {
+    margin-top: 250px;
+}
+
+section.middle > .list-menu-1 ul > li {
+    float: left;
+}
+
+section.middle > .list-menu-1 ul > a {
+    display: block;
+}
+
+section.middle > .list-menu-1 > ul > li {
+    margin-right: 70px;
+    padding-right: 70px;
+    position: relative;
+}
+
+section.middle > .list-menu-1 > ul > li > a {
+    font-size: 93px;
+    color: #808080;
+}
+
+section.middle > .list-menu-1 > ul > li.active > a {
+    color: black;
+}
+
+section.middle > .list-menu-1 > ul > li.active > a::before {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 15px;
+    left: -25px;
+    background: url(../img/ex-rhombus.png);
+}
+
+section.middle > .list-menu-1 > ul > li > ul > li {
+    margin-right: 5px;
+}
+
+section.middle > .list-menu-1 > ul > li > ul > li > a {
+    font-size: 22px;
+    color: #808080;
+}
+
+section.middle > .list-menu-1 > ul > li > ul > li.active > a {
+    color: red;
+}
+
+section.middle > .list-menu-1 > ul > li > ul > li > a::after {
+    content: " /";
+    color: #808080;
+}
+
+section.middle > .list-menu-1 > ul > li > ul > li:last-child > a::after {
+    content: "";
+}
+
+section.middle > .list-box-1 {
+    margin-top: 100px;
+}
+
+section.middle > .list-box-1 > ul {
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+}
+
+section.middle > .list-box-1 > ul > li {
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    cursor:pointer;
+}
+
+@media (min-width:1201px) {
+    section.middle > .list-box-1 > ul > li {
+        width: calc(100% / 4);
+    }
+
+    section.middle > .list-box-1 > ul > li:nth-child(4n + 1) {
+        clear: both;
+    }
+}
+
+@media (max-width:1200px) and (min-width:901px) {
+    section.middle > .list-box-1 > ul > li {
+        width: calc(100% / 3);
+    }
+
+    section.middle > .list-box-1 > ul > li:nth-child(3n + 1) {
+        clear: both;
+    }
+}
+
+@media (max-width:900px) and (min-width:601px) {
+    section.middle > .list-box-1 > ul > li {
+        width: calc(100% / 2);
+    }
+
+    section.middle > .list-box-1 > ul > li:nth-child(2n + 1) {
+        clear: both;
+    }
+}
+
+@media (max-width:600px) {
+    section.middle > .list-box-1 > ul > li {
+        width: 100%;
+    }
+}

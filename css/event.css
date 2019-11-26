@@ -1,0 +1,10 @@
+body::after {
+	margin-top: 1000px;
+}
+
+@media (max-width:1200px) {
+    header > a > .logo-1 {
+        width: 100px;
+        height: 100px;
+    }
+}

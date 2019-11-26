@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text&display=swap');
+@font-face {
+    font-family: 'ON-IGothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_eleven@1.0/ON-IGothic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+.font-o {
+    font-family: 'ON-IGothic', sans-serif;
+}
+
+.font-c {
+    font-family: 'Crimson Text', serif;
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+body,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: inherit;
+    color: inherit;
+}
