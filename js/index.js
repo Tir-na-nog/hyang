@@ -1,24 +1,16 @@
 var nowSlide = 1;
 
 $(document).ready(function () {
-	slide(nowSlide);
-	
+    slide(nowSlide);
+
     $("html, body").on('mousewheel DOMMouseScroll', function (e) {
         scrollEvent(e);
     });
-	
-	$('footer > ul > li').click(function() {
-		$('footer > ul > li').removeClass('active');
-		if( $(this).hasClass('footer-txt-1') ){
-			$('footer > ul > li.footer-txt-1').addClass('active');
-		}
-		if( $(this).hasClass('footer-txt-2') ){
-			$('footer > ul > li.footer-txt-2').addClass('active');
-		}
-		if( $(this).hasClass('footer-txt-3') ){
-			$('footer > ul > li.footer-txt-3').addClass('active');
-		}
-	});
+
+
+    $('.popup > a > img:first-child').click(function () {
+        $('.popup').fadeOut(300);
+    });
 });
 
 function scrollEvent(e) {
@@ -47,13 +39,13 @@ function scrollEvent(e) {
             $('section.top > .img-box').slideDown(500);
         }
 
-        if (nowHeight > topHeight && nowHeight <= topHeight + middleHeight_1) {
+        if (nowHeight <= topHeight + middleHeight_1 && nowHeight > topHeight) {
             $('body').stop().animate({
                 scrollTop: topHeight
             }, 500);
         }
 
-        if (nowHeight > topHeight + middleHeight_1 && nowHeight <= topHeight + middleHeight_1 + middleHeight_2) {
+        if (nowHeight <= topHeight + middleHeight_1 + middleHeight_2 && nowHeight > topHeight + middleHeight_1) {
             $('body').stop().animate({
                 scrollTop: topHeight + middleHeight_1
             }, 500);
@@ -66,10 +58,6 @@ function scrollEvent(e) {
                 scrollTop: topHeight + middleHeight_1 + middleHeight_2
             }, 500);
         }
-
-        $('footer').stop().animate({
-            bottom: -400
-        }, 300);
     } else {
         //wheeldown
         if (nowHeight < topHeight) {
@@ -81,13 +69,13 @@ function scrollEvent(e) {
             $('section.top > .img-box').slideUp(500);
         }
 
-        if (nowHeight >= topHeight && nowHeight < topHeight + middleHeight_1) {
+        if (nowHeight < topHeight + middleHeight_1 && nowHeight >= topHeight) {
             $('body').stop().animate({
                 scrollTop: topHeight + middleHeight_1
             }, 500);
         }
 
-        if (nowHeight >= topHeight + middleHeight_1 && nowHeight < topHeight + middleHeight_1 + middleHeight_2) {
+        if (nowHeight < topHeight + middleHeight_1 + middleHeight_2 && nowHeight >= topHeight + middleHeight_1) {
             $('body').stop().animate({
                 scrollTop: topHeight + middleHeight_1 + middleHeight_2
             }, 500);
@@ -95,9 +83,9 @@ function scrollEvent(e) {
             $('aside.left-menu-1').fadeOut(300);
         }
 
-        if (nowHeight == bottomHeight) {
-            $('footer').stop().animate({
-                bottom: 0
+        if (nowHeight >= topHeight + middleHeight_1 + middleHeight_2) {
+            $('body').stop().animate({
+                scrollTop: bottomHeight
             }, 500);
         }
     }

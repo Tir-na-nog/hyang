@@ -1,30 +1,53 @@
-var nowSlide = 1;
-
 $(document).ready(function () {
     $("html, body").on('mousewheel DOMMouseScroll', function (e) {
         scrollEvent(e);
     });
-	
-	$('footer > ul > li').click(function() {
-		$('footer > ul > li').removeClass('active');
-		if( $(this).hasClass('footer-txt-1') ){
-			$('footer > ul > li.footer-txt-1').addClass('active');
-		}
-		if( $(this).hasClass('footer-txt-2') ){
-			$('footer > ul > li.footer-txt-2').addClass('active');
-		}
-		if( $(this).hasClass('footer-txt-3') ){
-			$('footer > ul > li.footer-txt-3').addClass('active');
-		}
-	});
-	
+
+    $('.list-menu-1 > ul > li').click(function () {
+        $('.list-menu-1 > ul > li').removeClass('active');
+        $('.list-menu-1 > ul > li > ul > li').removeClass('active');
+        $(this).addClass('active');
+        if ($(this).hasClass('women')) {
+            $('.list-menu-1 > ul > li.women > ul > li.all').addClass('active');
+            menuChange(0);
+        } else {
+            $('.list-menu-1 > ul > li.men > ul > li.all').addClass('active');
+            menuChange(0);
+        }
+    });
+
+    $('.list-menu-1 > ul > li > ul > li').click(function (e) {
+        var menuChangeNum = 0;
+
+        $('.list-menu-1 > ul > li > ul > li').removeClass('active');
+        $(this).addClass('active');
+
+        if ($(this).hasClass('all')) {
+            menuChangeNum = '0';
+        } else if ($(this).hasClass('dior')) {
+            menuChangeNum = '1';
+        } else if ($(this).hasClass('gucci')) {
+            menuChangeNum = '2';
+        } else if ($(this).hasClass('versace')) {
+            menuChangeNum = '3';
+        } else if ($(this).hasClass('chanel')) {
+            menuChangeNum = '4';
+        } else if ($(this).hasClass('burberry')) {
+            menuChangeNum = '5';
+        } else if ($(this).hasClass('montblanc')) {
+            menuChangeNum = '6';
+        }
+
+        menuChange(menuChangeNum);
+        e.stopPropagation();
+    });
 });
 
 function scrollEvent(e) {
     var E = e.originalEvent;
     var nowHeight = $('body').scrollTop();
-    var topHeight = $('nav.list-menu-1').height();
-    var middleHeight = $('nav.list-box-1').outerHeight(true);
+    var topHeight_1 = $('nav.list-menu-1').outerHeight(true);
+    var topHeight_2 = $('nav.list-menu-1').outerHeight(true);
     var bottomHeight = $(document).height() - $(window).height();
 
     delta = 0;
@@ -36,23 +59,20 @@ function scrollEvent(e) {
 
     if (delta > 0) {
         //wheelup
-        if (nowHeight < topHeight) {
+        if (nowHeight <= 250) {
             $('header').fadeIn(300);
         }
-
-        $('footer').stop().animate({
-            bottom: -400
-        }, 300);
     } else {
         //wheeldown
-        if (nowHeight >= topHeight) {
-            $('header').fadeOut(300);
-        }
+        $('header').fadeOut(300);
+    }
+}
 
-        if (nowHeight == bottomHeight) {
-            $('footer').stop().animate({
-                bottom: 0
-            }, 500);
-        }
+function menuChange(menuChangeNum) {
+    $('.list-box-1 > ul > li').hide();
+    if (menuChangeNum == '0') {
+        $('.list-box-1 > ul > li').show();
+    } else {
+        $('.list-box-1 > ul > li.item-num-' + menuChangeNum).show();
     }
 }

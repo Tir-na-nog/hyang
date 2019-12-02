@@ -1,5 +1,5 @@
 body::after {
-	margin-top: 30px;
+    margin-top: 30px;
 }
 
 @media (max-width:1200px) {
@@ -7,18 +7,18 @@ body::after {
         width: 100px;
         height: 100px;
     }
-	
-	.con {
-		margin-left: 25px;
-		margin-right: 25px;
-	}
+
+    .con {
+        margin-left: 25px;
+        margin-right: 25px;
+    }
 }
 
 .con {
     max-width: 1150px;
 }
 
-section.middle {
+section.middle > .list-menu-1 {
     margin-top: 250px;
 }
 
@@ -56,7 +56,12 @@ section.middle > .list-menu-1 > ul > li.active > a::before {
 }
 
 section.middle > .list-menu-1 > ul > li > ul > li {
+    display: none;
     margin-right: 5px;
+}
+
+section.middle > .list-menu-1 > ul > li.active > ul > li {
+    display: block;
 }
 
 section.middle > .list-menu-1 > ul > li > ul > li > a {
@@ -89,36 +94,25 @@ section.middle > .list-box-1 > ul {
 section.middle > .list-box-1 > ul > li {
     border-bottom: 1px solid black;
     border-right: 1px solid black;
-    cursor:pointer;
+    cursor: pointer;
+    position: relative;
 }
 
 @media (min-width:1201px) {
     section.middle > .list-box-1 > ul > li {
-        width: calc(100% / 4);
-    }
-
-    section.middle > .list-box-1 > ul > li:nth-child(4n + 1) {
-        clear: both;
+        width: 25%;
     }
 }
 
 @media (max-width:1200px) and (min-width:901px) {
     section.middle > .list-box-1 > ul > li {
-        width: calc(100% / 3);
-    }
-
-    section.middle > .list-box-1 > ul > li:nth-child(3n + 1) {
-        clear: both;
+        width: 33.333333%;
     }
 }
 
 @media (max-width:900px) and (min-width:601px) {
     section.middle > .list-box-1 > ul > li {
-        width: calc(100% / 2);
-    }
-
-    section.middle > .list-box-1 > ul > li:nth-child(2n + 1) {
-        clear: both;
+        width: 50%;
     }
 }
 
@@ -126,4 +120,41 @@ section.middle > .list-box-1 > ul > li {
     section.middle > .list-box-1 > ul > li {
         width: 100%;
     }
+}
+
+section.middle > .list-box-1 > ul > li > .img-box {
+    position: relative;
+    transition: transform 0.3s;
+}
+
+section.middle > .list-box-1 > ul > li:hover > .img-box {
+    transform: scale(1.2);
+    background-color: white;
+    border: 1px solid black;
+    z-index: 1;
+}
+
+section.middle > .list-box-1 > ul > li:hover > .img-box > img {
+    opacity: 0.5;
+    
+}
+
+section.middle > .list-box-1 > ul > li > .name-box {
+    position: absolute;
+    width: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: none;
+    z-index: 2;
+}
+
+section.middle > .list-box-1 > ul > li:hover > .name-box {
+    display: block;
 }
