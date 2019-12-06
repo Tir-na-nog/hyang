@@ -1,24 +1,18 @@
-html,
-body {
-    height: 100%;
-}
-
-/*
-body::after {
-	content: url("../img/ex-down-1.png");
-	text-align: center;
-	display: block;
-	height: 50px;
-	padding: 10px;
-	background: black;
-	background-size: initial;
-}
-*/
-
 header {
     position: fixed;
     width: 100%;
     z-index: 2;
+}
+
+header::after {
+    content: "";
+    position: fixed;
+    top: 105px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: #cccccc;
+    z-index: -1;
 }
 
 header > ul {
@@ -26,13 +20,7 @@ header > ul {
     width: 50%;
 }
 
-@media (max-width:1200px) {
-    header > ul {
-        display: none;
-    }
-}
-
-header > .top-menu-2 {
+header > ul:nth-child(2) {
     text-align: right;
 }
 
@@ -46,6 +34,23 @@ header > ul > li > a {
     margin: 30px;
     font-size: 24px;
     font-weight: bold;
+	position: relative;
+}
+
+header > ul > li > a::after {
+    content: "";
+	position: absolute;
+	top: 63%;
+	left: 0;
+	width: 0;
+	height: 5px;
+	background-color: red;
+	z-index: -1;
+}
+
+header > ul > li > a.active::after {
+	transition: width 0.5s;
+    width: 100%;
 }
 
 header > a > .logo-1 {
@@ -58,8 +63,33 @@ header > a > .logo-1 {
     z-index: 5;
 }
 
+@media (max-width:1200px) {
+    header::after {
+        display: none;
+    }
+
+	header > ul > li > a {
+		padding: 5px;
+		margin: 20px;
+		font-size: 18px;
+	}
+	
+    header > a > .logo-1 {
+        width: 100px;
+        height: 100px;
+    }
+}
+
 .con {
     margin: 0 auto;
+    max-width: 1150px;
+}
+
+@media (max-width:1200px) {
+    .con {
+        margin-left: 25px;
+        margin-right: 25px;
+    }
 }
 
 .img-box > img {
@@ -90,29 +120,29 @@ footer > ul {
 }
 
 footer > ul > li {
-	float: left;
-	width: 33.3333%;
+    float: left;
+    width: 33.3333%;
     text-align: center;
     box-sizing: border-box;
     padding: 20px 40px;
 }
 
 footer > ul > li > h3 {
-	font-size: 22px;
-	margin: 10px;
+    font-size: 22px;
+    margin: 10px;
 }
 
 footer > ul > li > p {
-	font-size: 18px;
+    font-size: 18px;
     color: #808080;
 }
 
 footer > p {
-	float: left;
-	width: 100%;
+    float: left;
+    width: 100%;
     text-align: center;
     padding: 10px 0;
-	font-size: 18px;
+    font-size: 18px;
     color: #808080;
     font-weight: normal;
 }

@@ -6,29 +6,109 @@
     <title>Perfume Store</title>
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/lib.css">
-    <link rel="stylesheet" href="./css/event.css">
+    <link rel="stylesheet" href="./css/cart.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="./js/event.js"></script>
+    <script src="./js/cart.js"></script>
 </head>
 
 <body>
     <header>
-        <ul class="top-menu-1">
+        <ul>
             <li><a href="./index.html">HOME</a></li>
             <li><a href="./store.html">STORE</a></li>
             <li><a href="./event.html">EVENT</a></li>
         </ul>
-        <ul class="top-menu-2">
-            <li><a href="#">Sign Up</a></li>
-            <li><a href="#">Log In</a></li>
+        <ul>
+            <li><a href="./signup.html">Sign Up</a></li>
+            <li><a href="./login.html">Log In</a></li>
         </ul>
 
         <a href="./index.html">
-            <img class="logo-1" src="./img/logo-1.png" alt="로고">
+            <img class="logo-1" src="./img/logo-1.png" alt="logo">
         </a>
     </header>
 
-    <section>
+    <section class="con">
+		<div>
+			<img src="./img/ex-basket.png">
+			<h1>장바구니</h1>
+		</div>
+		<div class="cart-box">
+			<div class="item-box cart-box-0">
+				<div>
+					<input type="checkbox" id="checkbox-1">
+					<label for="checkbox-1">01</label>
+				</div>
+				<div class="img-box"><img src="./img/perfume-gucci-1.png" alt="perfume"></div>
+				<div>
+					<div>향수이름</div>
+					<div>440,000</div>
+				</div>
+			</div>
+			<div class="item-box cart-box-1">
+				<div>
+					<input type="checkbox" id="checkbox-2">
+					<label for="checkbox-2">02</label>
+				</div>
+				<div class="img-box"><img src="./img/perfume-gucci-1.png" alt="perfume"></div>
+				<div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<div class="item-box cart-box-2">
+				<div>
+					<input type="checkbox" id="checkbox-3">
+					<label for="checkbox-3">03</label>
+				</div>
+				<div class="img-box"><img src="./img/perfume-gucci-1.png" alt="perfume"></div>
+				<div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<div class="item-box cart-box-3">
+				<div>
+					<input type="checkbox" id="checkbox-4">
+					<label for="checkbox-4">04</label>
+				</div>
+				<div class="img-box"><img src="./img/perfume-gucci-1.png" alt="perfume"></div>
+				<div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<div class="item-box cart-box-4">
+				<div>
+					<input type="checkbox" id="checkbox-5">
+					<label for="checkbox-5">05</label>
+				</div>
+				<div class="img-box"><img src="./img/perfume-gucci-1.png" alt="perfume"></div>
+				<div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<div class="item-box cart-box-5">
+				<div>
+					<input type="checkbox" id="checkbox-6">
+					<label for="checkbox-6">06</label>
+				</div>
+				<div class="img-box"><img src="./img/perfume-gucci-1.png" alt="perfume"></div>
+				<div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<div class="price-box">
+				<h3>합계 : <span></span>원</h3>
+			</div>
+			<div class="btn-box">
+				<button onclick="itemDel()">삭제</button>
+				<button onclick="itemBuyAll()">전체 상품 구매</button>
+				<button onclick="itemBuy()">선택 상품 구매</button>
+			</div>
+		</div>
     </section>
 
     <footer>

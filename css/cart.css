@@ -1,0 +1,168 @@
+section {
+	margin-top: 250px;
+}
+
+section > div:first-child {
+	margin-top: 250px;
+	position: relative;
+}
+
+section > div:first-child::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 20px;
+    width: 25px;
+    height: 25px;
+    background: url(../img/ex-rhombus.png);
+}
+
+section > div:first-child > img {
+	display: inline-block;
+	margin-left: 50px;
+	vertical-align: middle;
+}
+
+section > div:first-child > h1 {
+	display: inline-block;
+	margin: 0;
+	padding: 10px;
+	font-size:30px;
+	vertical-align: middle;
+}
+
+section > .cart-box {
+	width: 100%;
+	margin-top: 30px;
+	padding: 30px;
+    border: 2px solid black;
+    box-sizing: border-box;
+}
+
+section > .cart-box > div {
+	clear: both;
+}
+
+section > .cart-box > .item-box > div {
+	float: left;
+	margin-bottom: 30px;
+}
+
+section > .cart-box > .item-box > div:first-child {
+	width: 100px;
+	text-align: right;
+}
+
+section > .cart-box > .item-box > div:first-child > input[type=checkbox] {
+	display: none;
+}
+
+section > .cart-box > .item-box > div:first-child > input[type=checkbox] + label {
+	position: relative;
+	margin-right: 10px;
+	font-size: 22px;
+	font-weight: bold;
+}
+
+section > .cart-box > .item-box > div:first-child > input[type=checkbox] + label::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -35px;
+	width: 25px;
+	height: 25px;
+	border: 2px solid black;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+
+section > .cart-box > .item-box > div:first-child > input[type=checkbox]:checked + label::before {
+	background: url(../img/ex-rhombus.png) no-repeat center center;
+	background-size: contain;
+}
+
+section > .cart-box > .item-box > .img-box {
+	width: 150px;
+	border: 2px solid black;
+	box-sizing: border-box;
+}
+
+section > .cart-box > .item-box > div:last-child {
+	padding: 30px;
+}
+
+section > .cart-box > .item-box > div:last-child  > div {
+	margin-top: 12px;
+	font-size: 24px;
+}
+
+section > .cart-box > .item-box > div:last-child  > div:nth-child(1) {
+	font-weight: bold;
+}
+
+section > .cart-box > .item-box > div:last-child  > div:nth-child(2) {
+	padding-left: 30px;
+}
+
+section > .cart-box > .item-box > div:last-child  > div:nth-child(2)::before {
+	content: "₩";
+}
+
+section > .cart-box > .item-box > div:last-child  > div:nth-child(2)::after {
+	content: " / 100ml";
+	font-size: 20px;
+}
+
+section > .cart-box > .price-box {
+	text-align: right;
+	padding-right: 15px;
+}
+
+section > .cart-box > .price-box > h3 {
+	font-size: 24px;
+	display: inline-block;
+	position: relative;
+}
+
+section > .cart-box > .price-box > h3::before {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: -5px;
+	width: 100%;
+	padding: 0 5px;
+	height: 8px;
+	background-color: red;
+	z-index: -1;
+	background-color:red;
+}
+
+section > .cart-box > .btn-box {
+	height: 30px;
+}
+
+section > .cart-box > .btn-box > button {
+	float: right;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 30px;
+	font-size: 18px;
+	background-color: black;
+	color: white;
+}
+
+section > .cart-box > .btn-box > button:first-child {
+	float: left;
+}
+
+section > .cart-box > .btn-box > button:last-child {
+	margin-right: 10px;
+}
+
+
+
+
+
+
+
+

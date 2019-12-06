@@ -1,24 +1,37 @@
-var nowSlide = 1;
-
 $(document).ready(function () {
-    slide(nowSlide);
-
+    slide(1);
+    /* 마우스 스크롤 감지 */
     $("html, body").on('mousewheel DOMMouseScroll', function (e) {
         scrollEvent(e);
     });
-
-
-    $('.popup > a > img:first-child').click(function () {
-        $('.popup').fadeOut(300);
+    /* 팝업 X버튼 이벤트 */
+    $('.popup > img').click(function (e) {
+        e.stopPropagation();
+        $(this).parent().fadeOut(500);
     });
+    $('.popup-1').fadeIn(300);
+    $('.popup-3').click(function () {
+        location.href = './animation.html';
+    });
+    $('.popup-3').animate({
+        left: 0
+    }, 500);
 });
-
+/* 키보드 상하 감지 */
+$(document).keyup(function (key) {
+    if (key.which == 38 || key.which == 40) {
+        scrollEvent_2();
+    } else return;
+});
+/* 마우스 스크롤 이벤트 */
 function scrollEvent(e) {
     var E = e.originalEvent;
     var nowHeight = $('body').scrollTop();
     var topHeight = $('section.top').height();
-    var middleHeight_1 = $('section.middle > #content-1').outerHeight(true);
-    var middleHeight_2 = $('section.middle > #content-2').outerHeight(true);
+    var middleHeight_1 = $('section.middle > article:first-child').outerHeight(true);
+    var middleHeight_2 = $('section.middle > article:nth-child(2)').outerHeight(true);
+    var middleHeight_3 = $('section.middle > article:nth-child(3)').outerHeight(true);
+    var middleHeight_4 = $('section.middle > article:nth-child(4)').outerHeight(true);
     var bottomHeight = $(document).height() - $(window).height();
 
     delta = 0;
@@ -34,29 +47,27 @@ function scrollEvent(e) {
             $('body').stop().animate({
                 scrollTop: 0
             }, 500);
-            $('header').fadeOut(300);
-            $('aside.left-menu-1').fadeOut(300);
             $('section.top > .img-box').slideDown(500);
-        }
-
-        if (nowHeight <= topHeight + middleHeight_1 && nowHeight > topHeight) {
+            $('header').fadeOut(300);
+            $('header > ul:nth-child(1) > li:nth-child(1) > a').removeClass('active');
+        } else if (nowHeight <= topHeight + middleHeight_1) {
             $('body').stop().animate({
                 scrollTop: topHeight
             }, 500);
-        }
-
-        if (nowHeight <= topHeight + middleHeight_1 + middleHeight_2 && nowHeight > topHeight + middleHeight_1) {
+            $('header').fadeOut(300);
+            $('header > ul:nth-child(1) > li:nth-child(1) > a').removeClass('active');
+        } else if (nowHeight <= topHeight + middleHeight_1 + middleHeight_2) {
             $('body').stop().animate({
                 scrollTop: topHeight + middleHeight_1
             }, 500);
-            $('header').fadeIn(300);
-            $('aside.left-menu-1').fadeIn(300);
-        }
-
-        if (nowHeight > topHeight + middleHeight_1 + middleHeight_2) {
+        } else if (nowHeight <= topHeight + middleHeight_1 + middleHeight_2 + middleHeight_3) {
             $('body').stop().animate({
                 scrollTop: topHeight + middleHeight_1 + middleHeight_2
             }, 500);
+        } else if (nowHeight > topHeight + middleHeight_1 + middleHeight_2 + middleHeight_3) {
+            $('body').stop().animate({
+                scrollTop: topHeight + middleHeight_1 + middleHeight_2 + middleHeight_3
+            }, 350);
         }
     } else {
         //wheeldown
@@ -64,34 +75,46 @@ function scrollEvent(e) {
             $('body').stop().animate({
                 scrollTop: topHeight
             }, 500);
-            $('header').fadeIn(300);
-            $('aside.left-menu-1').fadeIn(300);
             $('section.top > .img-box').slideUp(500);
-        }
-
-        if (nowHeight < topHeight + middleHeight_1 && nowHeight >= topHeight) {
+        } else if (nowHeight < topHeight + middleHeight_1) {
             $('body').stop().animate({
                 scrollTop: topHeight + middleHeight_1
             }, 500);
-        }
-
-        if (nowHeight < topHeight + middleHeight_1 + middleHeight_2 && nowHeight >= topHeight + middleHeight_1) {
+            $('header').fadeIn(300);
+            $('header > ul:nth-child(1) > li:nth-child(1) > a').addClass('active');
+        } else if (nowHeight < topHeight + middleHeight_1 + middleHeight_2) {
             $('body').stop().animate({
                 scrollTop: topHeight + middleHeight_1 + middleHeight_2
             }, 500);
-            $('header').fadeOut(300);
-            $('aside.left-menu-1').fadeOut(300);
+        } else if (nowHeight < topHeight + middleHeight_1 + middleHeight_2 + middleHeight_3) {
+            $('body').stop().animate({
+                scrollTop: topHeight + middleHeight_1 + middleHeight_2 + middleHeight_3
+            }, 500);
         }
-
-        if (nowHeight >= topHeight + middleHeight_1 + middleHeight_2) {
+        if (nowHeight + 1 >= topHeight + middleHeight_1 + middleHeight_2 + middleHeight_3) {
             $('body').stop().animate({
                 scrollTop: bottomHeight
-            }, 500);
+            }, 350);
         }
     }
 }
+/* 키보드 스크롤 */
+function scrollEvent_2(k) {
+    var nowHeight = $('body').scrollTop();
+    var topHeight = $('section.top').height();
+    var middleHeight_1 = $('section.middle > article:first-child').outerHeight(true);
 
+    if (nowHeight <= topHeight + middleHeight_1) {
+        $('header').fadeOut(300);
+        $('header > ul:nth-child(1) > li:nth-child(1) > a').removeClass('active');
+    } else {
+        $('header').fadeIn(300);
+        $('header > ul:nth-child(1) > li:nth-child(1) > a').addClass('active');
+    }
+}
+/* 슬라이드 */
 function slide(snum) {
+    var nowSlide = snum;
     var winHeight = $(window).height();
     var winWidth = $(window).width();
     $('.banner-img').hide();
@@ -117,7 +140,7 @@ function slide(snum) {
 
     autoSlide(nowSlide);
 }
-
+/* 슬라이드 자동넘기기 */
 var slideTimer;
 
 function autoSlide(ns) {
@@ -125,32 +148,4 @@ function autoSlide(ns) {
     slideTimer = setTimeout(function () {
         slide(ns);
     }, 2000);
-}
-
-function actionStart() {
-    $('section.bottom > .video-cover').fadeOut(500);
-    actionTimer = setTimeout(function () {
-        actionEnd();
-    }, 19000);
-
-    $('section.bottom > .video-box > .logo-1').addClass('action-1');
-    $('section.bottom > .video-box > .bottle-body').addClass('action-2');
-    $('section.bottom > .video-box > .bottle-liquid-1').addClass('action-3');
-    $('section.bottom > .video-box > .bottle-liquid-2').addClass('action-4');
-    $('section.bottom > .video-box > .bottle-liquid-3').addClass('action-5');
-    $('section.bottom > .video-box > .bottle-cap').addClass('action-6');
-    $('section.bottom > .video-box > .bottle-label').addClass('action-7');
-    $('section.bottom > .video-box > .bottle-car').addClass('action-8');
-}
-
-function actionEnd() {
-    $('section.bottom > .video-box > .logo-1').removeClass('action-1');
-    $('section.bottom > .video-box > .bottle-body').removeClass('action-2');
-    $('section.bottom > .video-box > .bottle-liquid-1').removeClass('action-3');
-    $('section.bottom > .video-box > .bottle-liquid-2').removeClass('action-4');
-    $('section.bottom > .video-box > .bottle-liquid-3').removeClass('action-5');
-    $('section.bottom > .video-box > .bottle-cap').removeClass('action-6');
-    $('section.bottom > .video-box > .bottle-label').removeClass('action-7');
-    $('section.bottom > .video-box > .bottle-car').removeClass('action-8');
-    $('section.bottom > .video-cover').fadeIn(1000);
 }

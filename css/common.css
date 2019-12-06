@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Crimson+Text&display=swap');
+
 @font-face {
     font-family: 'ON-IGothic';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_eleven@1.0/ON-IGothic.woff') format('woff');
@@ -21,6 +22,7 @@ html {
 
 html,
 body {
+    height: 100%;
     overflow-x: hidden;
 }
 
