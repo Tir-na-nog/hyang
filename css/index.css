@@ -169,6 +169,18 @@ section.middle > article > div:first-child > h1 {
     font-size: 60px;
     font-weight: bold;
     color: white;
+    position: relative;
+}
+
+section.middle > article:nth-child(2) > div:first-child > h1::before,
+section.middle > article:nth-child(3) > div:first-child > h1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -30px;
+    width: 25px;
+    height: 25px;
+    background: url(../img/ex-rhombus.png);
 }
 
 section.middle > article:nth-child(1) {

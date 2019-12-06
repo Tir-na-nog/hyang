@@ -1,6 +1,6 @@
 section.con {
     margin-top: 200px;
-	margin-bottom: 100px;
+    margin-bottom: 100px;
 }
 
 section.con > form {
@@ -9,79 +9,79 @@ section.con > form {
 }
 
 section.con > form > div {
-	padding: 15px;
-	clear: both;
+    padding: 15px;
+    clear: both;
 }
 
 section.con > form > div > h1 {
-	font-size: 40px;
-	text-align: center;
-	position: relative;
+    font-size: 40px;
+    text-align: center;
+    position: relative;
 }
 
 section.con > form > div > h1::after {
     content: "";
-	width: 0px;
-	height: 8px;
-	position: absolute;
-	top: 35px;
-	left: 135px;
-	background-color: red;
-	z-index: -1;
+    width: 0px;
+    height: 8px;
+    position: absolute;
+    top: 35px;
+    left: 135px;
+    background-color: red;
+    z-index: -1;
 }
 
 section.con > form > div > h1.active::after {
-	width: 130px;
-	transition: width 0.5s;
+    width: 130px;
+    transition: width 0.5s;
 }
 
 
 section.con > form > div > label {
-	font-size: 24px;
-	padding-left: 15px;
+    font-size: 24px;
+    padding-left: 15px;
 }
 
 section.con > form > div > input {
-	width: 100%;
-	margin-top: 10px;
-	padding: 10px 15px;
-	border: 2px solid black;
-	border-radius: 20px;
-	box-sizing: border-box;
-	font-size: 16px;
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px 15px;
+    border: 2px solid black;
+    border-radius: 20px;
+    box-sizing: border-box;
+    font-size: 16px;
 }
 
 section.con > form > div:nth-child(4) {
-	text-align: center;
+    text-align: center;
 }
 
 section.con > form > div > button {
-	padding: 10px 20px;
-	border: none;
-	border-radius: 30px;
-	font-size: 24px;
-	color: white;
-	background-color: red;
-	cursor: pointer;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    font-size: 24px;
+    color: white;
+    background-color: red;
+    cursor: pointer;
 }
 
 section.con > form > div:last-child {
-	margin-top: 20px;
+    margin-top: 20px;
 }
 
 section.con > form > div:last-child > div {
-	float: left;
-	padding: 10px 20px;
-	border: none;
-	border-radius: 30px;
-	font-size: 24px;
-	color: white;
-	background-color: black;
+    float: left;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    font-size: 24px;
+    color: white;
+    background-color: black;
 }
 
 section.con > form > div:last-child > img {
-	float: right;
-	width: 45px;
-	margin: 0 5px;
-	cursor: pointer;
+    float: right;
+    width: 45px;
+    margin: 0 5px;
+    cursor: pointer;
 }

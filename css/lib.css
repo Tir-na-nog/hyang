@@ -34,22 +34,22 @@ header > ul > li > a {
     margin: 30px;
     font-size: 24px;
     font-weight: bold;
-	position: relative;
+    position: relative;
 }
 
 header > ul > li > a::after {
     content: "";
-	position: absolute;
-	top: 63%;
-	left: 0;
-	width: 0;
-	height: 5px;
-	background-color: red;
-	z-index: -1;
+    position: absolute;
+    top: 63%;
+    left: 0;
+    width: 0;
+    height: 5px;
+    background-color: red;
+    z-index: -1;
 }
 
 header > ul > li > a.active::after {
-	transition: width 0.5s;
+    transition: width 0.5s;
     width: 100%;
 }
 
@@ -68,12 +68,12 @@ header > a > .logo-1 {
         display: none;
     }
 
-	header > ul > li > a {
-		padding: 5px;
-		margin: 20px;
-		font-size: 18px;
-	}
-	
+    header > ul > li > a {
+        padding: 5px;
+        margin: 20px;
+        font-size: 18px;
+    }
+
     header > a > .logo-1 {
         width: 100px;
         height: 100px;

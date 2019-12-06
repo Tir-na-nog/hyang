@@ -43,12 +43,12 @@ section > .item-menu-1 > ul > li > a::after {
     left: 0px;
     width: 0;
     height: 8px;
-	background-color: red;
-	z-index: -1;
+    background-color: red;
+    z-index: -1;
 }
 
 section > .item-menu-1 > ul > li.active > a::after {
-	transition: width 0.5s;
+    transition: width 0.5s;
     width: 100%;
 }
 
@@ -135,9 +135,9 @@ section > .item-list-1 > .item-ex > div > div:nth-child(2) > div:nth-child(1) {
 }
 
 section > .item-list-1 > .item-ex > div > div:nth-child(2) > div:nth-child(2) > div {
-	float: left;
+    float: left;
     width: 130px;
-	margin: 10px 20px 0 0;
+    margin: 10px 20px 0 0;
     padding: 10px;
     border: 1px solid black;
     font-size: 18px;
@@ -146,13 +146,13 @@ section > .item-list-1 > .item-ex > div > div:nth-child(2) > div:nth-child(2) > 
 
 section > .item-list-1 > .item-ex > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2):hover,
 section > .item-list-1 > .item-ex > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(3):hover {
-	background-color: black;
-	color: white;
-	cursor: pointer;
+    background-color: black;
+    color: white;
+    cursor: pointer;
 }
 
 section > .item-list-1 > .item-ex > div > div:nth-child(2) > div:nth-child(2) > form {
-	display: none;
+    display: none;
 }
 
 section > .item-list-1 > .item-ex > div > div:nth-child(2) > div:nth-child(3) {
@@ -172,6 +172,15 @@ section > .item-list-1 > .item-ex > div > div:nth-child(2) > div:nth-child(4) {
     box-sizing: border-box;
     cursor: pointer;
     position: relative;
+    background: url(../img/ex-click.png);
+}
+
+section > .item-list-1 > .item-ex > div > div:nth-child(2) > div:nth-child(4):hover {
+    background: none;
+}
+
+section > .item-list-1 > .item-ex > div > div:nth-child(2) > div:nth-child(4).active {
+    background: none;
 }
 
 section > .item-list-1 > .item-ex > div > div:nth-child(2) > div:nth-child(4)::after {
@@ -182,7 +191,7 @@ section > .item-list-1 > .item-ex > div > div:nth-child(2) > div:nth-child(4)::a
     width: 19px;
     height: 10px;
     transform: translateX(-50%);
-    background: url(../img/ex-down.png);
+    background: url(../img/ex-down.png) no-repeat center center;
 }
 
 section > .item-list-1 > .item-ex > div > div:nth-child(2) > div:nth-child(4) > div {
@@ -192,6 +201,7 @@ section > .item-list-1 > .item-ex > div > div:nth-child(2) > div:nth-child(4) > 
     text-align: center;
     overflow: hidden;
     transition: width 0.4s;
+
 }
 
 section > .item-list-1 > .item-ex > div > div:nth-child(2) > div:nth-child(4):hover > div {
